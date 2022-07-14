@@ -16,4 +16,15 @@ after_success:
   - docker push djelin00/fib-nginx
   - docker push djelin00/fib-server
   - docker push djelin00/fib-worker
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-central-1'
+  app: 'fib'
+  env: 'fib-env'
+  bucket_name: 'elasticbeanstalk-eu-central-1-717274664613'
+  bucket_path: 'fib'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY  
   
