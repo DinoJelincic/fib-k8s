@@ -1,13 +1,13 @@
 version: "3"
 services:
   client:
-    #image: "djelin00/fib-client"
-    image: "cygnetops/multi-client-10-14"
+    image: "djelin00/fib-client"
+    #image: "cygnetops/multi-client-10-14"
     mem_limit: 128m
     hostname: client
-  server:
-    #image: "djelin00/fib-server"
-    image: "cygnetops/multi-server-10-14"
+  api:
+    image: "djelin00/fib-server"
+    #image: "cygnetops/multi-server-10-14"
     mem_limit: 128m
     hostname: api
     environment:
@@ -19,16 +19,16 @@ services:
       - PGPASSWORD=$PGPASSWORD
       - PGPORT=$PGPORT
   worker:
-    #image: "djelin00/fib-worker"
-    image: "cygnetops/multi-worker-10-14"
+    image: "djelin00/fib-worker"
+    #image: "cygnetops/multi-worker-10-14"
     mem_limit: 128m
     hostname: worker
     environment:
       - REDIS_HOST=$REDIS_HOST
       - REDIS_PORT=$REDIS_PORT
   nginx:
-    #image: "djelin00/fib-nginx"
-    image: "cygnetops/multi-nginx-10-14"
+    image: "djelin00/fib-nginx"
+    #image: "cygnetops/multi-nginx-10-14"
     mem_limit: 128m
     hostname: nginx
     ports:
