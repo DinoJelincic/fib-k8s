@@ -16,7 +16,7 @@ before_install:
   - gcloud config set compute/zone europe-central2-a
   - gcloud container clusters get-credentials fib-cluster 
   - echo $DOCKER_PASSWORD | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t djelin00/fib-test -f ./client/Dockerfile.dev ./client/Dockerfile.dev
+  - docker build -t djelin00/fib-test -f ./client/Dockerfile.dev ./client
 
 
 script:
