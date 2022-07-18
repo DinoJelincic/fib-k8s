@@ -19,7 +19,7 @@ before_install:
   - docker build -t djelin00/fib-test -f ./client/Dockerfile.dev ./client/Dockerfile.dev
 
 
- script:
+script:
   - docker run -e CI=true djelin00/fib-test npm test 
 deploy:
   provider: script 
